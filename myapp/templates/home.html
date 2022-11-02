@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <style>
+
+        strong:hover{
+            color: red;
+        }
+
+    </style>
+
+
+
+</head>
+<body>
+{#设置网站链接快捷地址#}
+    <div style="border: 1px solid black;border-radius: 10px 0px 0px 10px;text-align: center;background-color: #e3ffe3;opacity: 0.8;color: black;margin-left: 300px">
+        <h3 style="color: #3e2935">项目/平台链接跳转：</h3>
+        <strong style="color: cornflowerblue">
+            {% for i in hrefs %}
+                <a href="{{ i.href }}">{{ i.name }}></a> <br>
+            {% endfor %}
+        </strong>
+    </div>
+
+
+     <br>
+        <div style="border: 1px solid black;border-radius: 10px 0px 0px 10px;text-align: center;background-color: #e3ffe3;opacity: 0.8;color: white;margin-left: 300px">
+            <h3 style="color: #3e2935">项目：</h3>
+            <span style="color: black">
+            {#       这里存放后续的个人项目列表循环，类似传送门的套路 ,点击自己创建的项目可以直接进入项目内     #}
+                这里放置项目中不同的功能模块
+            </span>
+            <br>
+        </div>
+
+        <br>
+        <div style="border: 1px solid black;border-radius: 10px 0px 0px 10px;text-align: center;background-color: #e3ffe3;opacity: 0.8;color: white;margin-left: 300px">
+            <h3 style="color: #3e2935">最新消息：</h3>
+            <span style="color: black">
+            帮助页面上线；<br>
+            后台开启，仅限有管理权限同学使用；<br>
+            项目列表上线，您现在可以进入所有项目内了 <br>
+                </span>
+            <br>
+        </div>
+</body>
+</html>
+
+
+
+

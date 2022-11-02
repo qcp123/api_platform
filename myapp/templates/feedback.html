@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>反馈</title>
+</head>
+<body>
+    <div style="text-align: center">
+        <h1 style="color: #1d7db1;font-size: large">
+            <br>
+            请描述你的反馈~
+        </h1>
+        <form>
+            <textarea id="feedback_input" cols="50" rows="10" style="border-radius: 5px;
+            padding-left: 10px;box-shadow: 4px 4px 9px grey" placeholder="请输入意见反馈"></textarea>
+            <br><br>
+        </form>
+         <button style="height: 28px;width: 100px" onclick="feedback()">提交</button>
+    </div>
+
+    <script>
+        function feedback() {
+            feedback_text=document.getElementById('feedback_input').value;
+            $.get("/feedback/",{
+                "feedback_text":feedback_text
+            },function (ret) {
+                Toast.toast('反馈已提交！')
+            })
+        }
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    
+     <script>
+        function save() {
+            var name=document.getElementById('name').value;
+            var remark=document.getElementById('remark').value;
+            var other_user=document.getElementById('other_user').value;
+            console.log(name,remark,other_user)
+            $.get('/save_project_setting/'+'{{ project_name.id }}'+'/',{
+                'name':name,
+                'remark':remark,
+                'other_user':other_user,
+            },function (ret) {
+                alert('保存成功！')
+            })
+        }
+    </script>
+
+</head>
+<body>
+    <div style="text-align: right">
+        <nav class="navbar navbar-default" role="navigation" style="position: absolute;top: 0px;left: 230px;width:-webkit-calc(100% - 300px);z-index: 1">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <span style="font-size: xx-small" class="navbar-brand" >项目名称：{{ project_name.name }}</span>
+                    <a class="navbar-brand" href="/api_project/">项目列表</a>
+                </div>
+                <div>
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="/apis/{{ project_name.id }}/">接口库</a></li>
+                        <li><a href="/api_cases/{{ project_name.id }}/">用例库</a></li>
+                        <li><a href="/project_setting/{{ project_name.id }}/">项目设置</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <br><br>
+    <div style="text-align: center">
+        <h3>项目名称</h3>
+        <textarea name="" id="name" style="width: 70%" rows="4" placeholder="最多15字">{{ project_name.name }}</textarea><br>
+        <h3>项目描述</h3>
+        <textarea name="" id="remark" style="width: 70%" rows="4" placeholder="最多500字">{{ project_name.remark }}</textarea><br>
+        <h3>其他管理员</h3>
+        <textarea name="" id="other_user" style="width: 70%" rows="4" placeholder="多个成员请使用','(英文逗号)隔开">{{ project_name.other_user }}</textarea><br><br><br><br>
+        <button style="text-align: center;width: 100px;height: 50px;font-size: large" onclick="save()">提交</button>
+
+
+    </div>
+
+</body>
+</html>

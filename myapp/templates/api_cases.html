@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div style="text-align: right">
+    <nav class="navbar navbar-default" role="navigation" style="position: absolute;top: 0px;left: 230px;width:-webkit-calc(100% - 300px);z-index: 1">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <span style="font-size: xx-small" class="navbar-brand" >项目名称：{{ project_name.name }}</span>
+                <a class="navbar-brand" href="/api_project/">项目列表</a>
+            </div>
+            <div>
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="/apis/{{ project_name.id }}/">接口库</a></li>
+                    <li><a href="/api_cases/{{ project_name.id }}/">用例库</a></li>
+                    <li><a href="/project_setting/{{ project_name.id }}/">项目设置</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+</body>
+</html>
